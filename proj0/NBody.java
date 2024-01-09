@@ -10,7 +10,7 @@ public class NBody{
 		In in = new In(file);
 		int number = in.readInt();
 		double radius = in.readDouble();
-		Planet[] planets = new Planet[5];
+		Planet[] planets = new Planet[number];
 		for(int i = 0; i < number; i++) {
 			double xPos = in.readDouble();
 			double yPos = in.readDouble();
@@ -31,6 +31,8 @@ public class NBody{
 		double radius = readRadius(filename);
 		double t = 0;
 		int n = planets.length;
+
+		StdAudio.play("audio/2001.mid");
 
 		StdDraw.enableDoubleBuffering();
 
