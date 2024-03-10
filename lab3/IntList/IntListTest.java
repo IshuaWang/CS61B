@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import javax.naming.ldap.InitialLdapContext;
+
 public class IntListTest {
 
     /**
@@ -18,6 +20,14 @@ public class IntListTest {
 
         IntList x = IntList.of(3, 2, 1);
         assertEquals(threeTwoOne, x);
+    }
+
+    @Test
+    public void testReverse() {
+        assertNull(IntList.reverse(null));
+        assertEquals(IntList.of(3, 2, 1), IntList.reverse(IntList.of(1, 2, 3)));
+        IntList a = IntList.of(3, 2, 1);
+        assertNotEquals(a, IntList.reverse(a));
     }
 
     @Test
